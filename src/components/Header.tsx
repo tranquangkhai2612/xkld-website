@@ -32,8 +32,8 @@ export const Header: React.FC<HeaderProps> = ({
     <header className="zen-header">
       <div className="header-top">
         <div className="brand" onClick={() => setActiveTab('practice')} role="button" tabIndex={0}>
-          <div className="hanko-seal" title="Kana Dojo Seal">
-            <span>道場</span>
+          <div className="modern-app-icon" title="XKLD Dojo">
+            <span>あ</span>
           </div>
           <div className="brand-text">
             <h1 className="brand-title">かな道場 <span className="brand-sub">XKLD Dojo</span></h1>

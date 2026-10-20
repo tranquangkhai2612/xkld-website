@@ -1,82 +1,117 @@
 /* ==========================================================================
-   かな道場 - Kana Dojo | Modern Japanese Zen Design System
+   かな道場 - XKLD | Modern Clean Design System (2026 Edition)
    ========================================================================== */
 
 :root {
-  /* Typography - Modern & Clear Textbook Writing */
+  /* Modern Typography */
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-kana: 'Zen Maru Gothic', 'Noto Sans JP', sans-serif;
   --font-kana-handwriting: 'Klee One', 'Zen Maru Gothic', sans-serif;
-  --font-display: 'Zen Maru Gothic', 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
 
-  /* Zen Light Palette (Washi Paper & Sumi Ink) */
-  --bg-page: #F6F4EF;
+  /* Modern Clean Light Theme (Crisp Canvas & Slate) */
+  --bg-page: #F8FAFC;
   --bg-card: #FFFFFF;
-  --bg-surface: #F0EDE5;
+  --bg-surface: #F1F5F9;
   --bg-elevated: #FFFFFF;
-  --border-subtle: #E6E1D6;
-  --border-strong: #D5CEC0;
+  --border-subtle: #E2E8F0;
+  --border-strong: #CBD5E1;
 
-  --text-primary: #23211F;
-  --text-secondary: #5C5853;
-  --text-muted: #8E8981;
-  --text-inverse: #FAF8F5;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+  --text-inverse: #FFFFFF;
 
-  /* Traditional Japanese Accent Colors */
-  --accent-vermilion: #C84B31;       /* 朱色 Shuseki Cinnabar */
-  --accent-vermilion-soft: #FBF0ED;
-  --accent-vermilion-glow: rgba(200, 75, 49, 0.22);
-  --accent-matcha: #43765A;          /* 抹茶色 Matcha Green */
-  --accent-matcha-soft: #EDF5F0;
-  --accent-matcha-glow: rgba(67, 118, 90, 0.22);
-  --accent-gold: #C28B47;            /* 山吹色 Yamabuki Gold */
-  --accent-gold-soft: #FAF4EB;
-  --accent-slate: #54606E;           /* 藍鼠 Ainezumi Indigo Slate */
+  /* Modern Vibrant Accent Palette */
+  --accent-primary: #4F46E5;        /* Electric Indigo */
+  --accent-primary-hover: #4338CA;
+  --accent-primary-soft: #EEF2FF;
+  --accent-primary-glow: rgba(79, 70, 229, 0.2);
 
-  /* Shadows & Depth */
-  --shadow-sm: 0 2px 6px rgba(35, 33, 31, 0.04);
-  --shadow-md: 0 8px 24px rgba(35, 33, 31, 0.06), 0 2px 8px rgba(35, 33, 31, 0.03);
-  --shadow-lg: 0 16px 36px rgba(35, 33, 31, 0.09), 0 4px 12px rgba(35, 33, 31, 0.04);
-  --shadow-enso: 0 0 60px rgba(200, 75, 49, 0.08);
+  --accent-vermilion: #E11D48;      /* Vibrant Rose / Crimson */
+  --accent-vermilion-soft: #FFF1F2;
+  --accent-vermilion-glow: rgba(225, 29, 72, 0.2);
 
-  /* Border radius */
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 22px;
+  --accent-matcha: #10B981;         /* Crisp Emerald Green */
+  --accent-matcha-soft: #ECFDF5;
+  --accent-matcha-glow: rgba(16, 185, 129, 0.2);
+
+  --accent-gold: #F59E0B;           /* Modern Amber */
+  --accent-gold-soft: #FFFBEB;
+
+  /* Modern Subtle Layered Shadows */
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.03);
+  --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.03);
+  --shadow-lg: 0 20px 35px -10px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.04);
+  --shadow-glow: 0 0 40px rgba(79, 70, 229, 0.12);
+
+  /* Modern Smooth Radius */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
   --radius-xl: 32px;
   --radius-full: 9999px;
 
-  /* Transitions */
-  --ease-zen: cubic-bezier(0.16, 1, 0.3, 1);
+  /* Micro-interactions */
+  --ease-modern: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Zen Night Mode (Ink & Starlight) */
+/* Modern Sleek Dark Mode (OLED Deep Slate & Neon Accents) */
 [data-theme='zen-dark'] {
-  --bg-page: #121316;
-  --bg-card: #1B1C22;
-  --bg-surface: #24252E;
-  --bg-elevated: #2B2D38;
-  --border-subtle: #2D303C;
-  --border-strong: #3D4252;
+  --bg-page: #0B0F19;
+  --bg-card: #111827;
+  --bg-surface: #1E293B;
+  --bg-elevated: #243047;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
 
-  --text-primary: #F4F1EA;
-  --text-secondary: #B0ABC0;
-  --text-muted: #7A798C;
-  --text-inverse: #121316;
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --text-inverse: #0B0F19;
 
-  --accent-vermilion: #E5573C;
-  --accent-vermilion-soft: rgba(229, 87, 60, 0.15);
-  --accent-vermilion-glow: rgba(229, 87, 60, 0.35);
-  --accent-matcha: #4FA879;
-  --accent-matcha-soft: rgba(79, 168, 121, 0.15);
-  --accent-matcha-glow: rgba(79, 168, 121, 0.35);
-  --accent-gold: #DF9E4C;
-  --accent-gold-soft: rgba(223, 158, 76, 0.15);
+  --accent-primary: #6366F1;
+  --accent-primary-hover: #818CF8;
+  --accent-primary-soft: rgba(99, 102, 241, 0.15);
+  --accent-primary-glow: rgba(99, 102, 241, 0.35);
 
-  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.25);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.55);
-  --shadow-enso: 0 0 70px rgba(229, 87, 60, 0.15);
+  --accent-vermilion: #F43F5E;
+  --accent-vermilion-soft: rgba(244, 63, 94, 0.15);
+  --accent-vermilion-glow: rgba(244, 63, 94, 0.35);
+
+  --accent-matcha: #34D399;
+  --accent-matcha-soft: rgba(52, 211, 153, 0.15);
+  --accent-matcha-glow: rgba(52, 211, 153, 0.35);
+
+  --accent-gold: #FBBF24;
+  --accent-gold-soft: rgba(251, 191, 36, 0.15);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 12px 28px -5px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 24px 45px -10px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 50px rgba(99, 102, 241, 0.2);
+}
+
+/* Font Switching Support */
+[data-font='modern'] .kana-symbol,
+[data-font='modern'] .tile-char,
+[data-font='modern'] .glyph-char,
+[data-font='modern'] .chip-kana,
+[data-font='modern'] .word-jp,
+[data-font='modern'] .hira,
+[data-font='modern'] .kata {
+  font-family: 'Zen Maru Gothic', 'Noto Sans JP', sans-serif !important;
+}
+
+[data-font='handwriting'] .kana-symbol,
+[data-font='handwriting'] .tile-char,
+[data-font='handwriting'] .glyph-char,
+[data-font='handwriting'] .chip-kana,
+[data-font='handwriting'] .word-jp,
+[data-font='handwriting'] .hira,
+[data-font='handwriting'] .kata {
+  font-family: 'Klee One', 'Zen Maru Gothic', sans-serif !important;
 }
 
 /* Reset & Box Sizing */
@@ -91,10 +126,10 @@ html, body {
   background-color: var(--bg-page);
   color: var(--text-primary);
   font-family: var(--font-sans);
-  line-height: 1.6;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 button {
@@ -103,34 +138,35 @@ button {
   border: none;
   background: none;
   color: inherit;
+  user-select: none;
 }
 
 /* ==========================================================================
-   Main App Container
+   App Layout & Ambient Mesh Background
    ========================================================================== */
 .app-wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  max-width: 1040px;
+  max-width: 1080px;
   margin: 0 auto;
   padding: 0 20px 48px;
   position: relative;
 }
 
-/* Background Zen Motif */
+/* Ambient Subtle Modern Glow */
 .app-wrapper::before {
   content: '';
   position: fixed;
-  top: -150px;
-  right: -150px;
-  width: 500px;
-  height: 500px;
+  top: -100px;
+  right: -100px;
+  width: 450px;
+  height: 450px;
   border-radius: 50%;
-  background: radial-gradient(circle, var(--accent-vermilion-glow) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--accent-primary-glow) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
-  filter: blur(40px);
+  filter: blur(50px);
 }
 
 .main-content {
@@ -140,23 +176,23 @@ button {
 }
 
 /* ==========================================================================
-   Header Component
+   Modern Header Component
    ========================================================================== */
 .zen-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(246, 244, 239, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  padding: 16px 0 12px;
+  background: rgba(248, 250, 252, 0.85);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  padding: 18px 0 14px;
   border-bottom: 1px solid var(--border-subtle);
-  margin-bottom: 28px;
-  transition: background 0.3s ease;
+  margin-bottom: 32px;
+  transition: background 0.25s ease;
 }
 
 [data-theme='zen-dark'] .zen-header {
-  background: rgba(18, 19, 22, 0.88);
+  background: rgba(11, 15, 25, 0.85);
 }
 
 .header-top {
@@ -176,34 +212,35 @@ button {
   user-select: none;
 }
 
-/* Traditional Hanko Red Seal Stamp */
-.hanko-seal {
+/* Modern App Logo Icon (Gradient Squircle) */
+.modern-app-icon, .hanko-seal {
   width: 44px;
   height: 44px;
-  border-radius: 10px;
-  background: var(--accent-vermilion);
+  border-radius: 12px;
+  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #FFFFFF;
   font-family: var(--font-kana);
-  font-weight: 800;
-  font-size: 19px;
-  box-shadow: 0 4px 14px var(--accent-vermilion-glow);
-  transform: rotate(-3deg);
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  transition: transform 0.2s var(--ease-zen);
+  font-weight: 700;
+  font-size: 22px;
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+  transform: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: transform 0.2s var(--ease-modern), box-shadow 0.2s var(--ease-modern);
 }
 
-.brand:hover .hanko-seal {
-  transform: rotate(0deg) scale(1.05);
+.brand:hover .modern-app-icon, .brand:hover .hanko-seal {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 12px 26px rgba(79, 70, 229, 0.4);
 }
 
 .brand-title {
   font-family: var(--font-display);
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
   color: var(--text-primary);
   display: flex;
   align-items: baseline;
@@ -211,16 +248,25 @@ button {
 }
 
 .brand-sub {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--accent-vermilion);
+  font-size: 13px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #4F46E5, #7C3AED);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+}
+
+[data-theme='zen-dark'] .brand-sub {
+  background: linear-gradient(135deg, #818CF8, #C084FC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .brand-tagline {
   font-size: 13px;
   color: var(--text-secondary);
+  font-weight: 500;
 }
 
 .header-actions {
@@ -241,14 +287,20 @@ button {
   font-size: 13px;
   font-weight: 600;
   color: var(--text-secondary);
-  transition: all 0.25s var(--ease-zen);
+  transition: all 0.2s var(--ease-modern);
 }
 
 .streak-badge.active {
-  background: var(--accent-vermilion-soft);
-  border-color: var(--accent-vermilion);
-  color: var(--accent-vermilion);
-  box-shadow: 0 2px 10px var(--accent-vermilion-glow);
+  background: #FFF7ED;
+  border-color: #FDBA74;
+  color: #EA580C;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.18);
+}
+
+[data-theme='zen-dark'] .streak-badge.active {
+  background: rgba(234, 88, 12, 0.15);
+  border-color: rgba(234, 88, 12, 0.4);
+  color: #FB923C;
 }
 
 .flame-icon {
@@ -263,7 +315,7 @@ button {
 .script-mode-toggle {
   display: flex;
   background: var(--bg-surface);
-  padding: 3px;
+  padding: 4px;
   border-radius: var(--radius-full);
   border: 1px solid var(--border-subtle);
 }
@@ -274,7 +326,11 @@ button {
   font-size: 13px;
   font-weight: 600;
   color: var(--text-secondary);
-  transition: all 0.2s var(--ease-zen);
+  transition: all 0.15s ease;
+}
+
+.mode-btn:hover {
+  color: var(--text-primary);
 }
 
 .mode-btn.active {
@@ -283,10 +339,10 @@ button {
   box-shadow: var(--shadow-sm);
 }
 
-/* Icon Buttons */
+/* Modern Icon Buttons */
 .icon-btn {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-full);
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
@@ -294,7 +350,7 @@ button {
   align-items: center;
   justify-content: center;
   color: var(--text-secondary);
-  transition: all 0.2s var(--ease-zen);
+  transition: all 0.2s var(--ease-modern);
 }
 
 .icon-btn:hover {
@@ -304,23 +360,22 @@ button {
   transform: translateY(-1px);
 }
 
-/* Navigation Tabs */
+/* Modern Segmented Navigation Tabs */
 .zen-nav {
   display: flex;
   gap: 8px;
-  border-bottom: 2px solid transparent;
 }
 
 .nav-tab {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 18px;
+  padding: 9px 20px;
   border-radius: var(--radius-md);
   color: var(--text-secondary);
   font-size: 14px;
   font-weight: 600;
-  transition: all 0.2s var(--ease-zen);
+  transition: all 0.2s var(--ease-modern);
 }
 
 .nav-tab:hover {
@@ -329,15 +384,15 @@ button {
 }
 
 .nav-tab.active {
-  color: var(--accent-vermilion);
-  background: var(--accent-vermilion-soft);
+  color: var(--accent-primary);
+  background: var(--accent-primary-soft);
 }
 
 .tab-kanji {
   font-family: var(--font-kana);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 /* ==========================================================================
@@ -348,11 +403,11 @@ button {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  animation: fadeIn 0.4s var(--ease-zen);
+  animation: fadeIn 0.35s var(--ease-modern);
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -366,7 +421,7 @@ button {
   width: 100%;
   max-width: 680px;
   margin-bottom: 24px;
-  padding: 10px 18px;
+  padding: 10px 20px;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
@@ -425,14 +480,14 @@ button {
   font-size: 13px;
   font-weight: 600;
   color: var(--text-secondary);
-  transition: all 0.2s var(--ease-zen);
+  transition: all 0.2s var(--ease-modern);
   margin-left: auto;
 }
 
 .row-filter-btn:hover, .row-filter-btn.open {
   background: var(--bg-elevated);
-  color: var(--text-primary);
-  border-color: var(--accent-vermilion);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
 }
 
 .dropdown-arrow {
@@ -447,14 +502,14 @@ button {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 20px;
+  padding: 22px;
   margin-bottom: 24px;
   box-shadow: var(--shadow-md);
-  animation: slideDown 0.3s var(--ease-zen);
+  animation: slideDown 0.25s var(--ease-modern);
 }
 
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
+  from { opacity: 0; transform: translateY(-8px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -481,7 +536,7 @@ button {
 .pill-action-btn {
   font-size: 12px;
   font-weight: 600;
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: var(--radius-full);
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
@@ -491,8 +546,8 @@ button {
 
 .pill-action-btn:hover {
   background: var(--bg-elevated);
-  color: var(--accent-vermilion);
-  border-color: var(--accent-vermilion);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
 }
 
 .row-chips-grid {
@@ -509,7 +564,7 @@ button {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   text-align: left;
-  transition: all 0.2s var(--ease-zen);
+  transition: all 0.2s var(--ease-modern);
 }
 
 .row-chip:hover {
@@ -518,8 +573,8 @@ button {
 }
 
 .row-chip.active {
-  background: var(--accent-vermilion-soft);
-  border-color: var(--accent-vermilion);
+  background: var(--accent-primary-soft);
+  border-color: var(--accent-primary);
 }
 
 .chip-label {
@@ -529,7 +584,7 @@ button {
 }
 
 .row-chip.active .chip-label {
-  color: var(--accent-vermilion);
+  color: var(--accent-primary);
 }
 
 .chip-sub {
@@ -538,7 +593,7 @@ button {
 }
 
 /* ==========================================================================
-   Zen Flashcard
+   Modern Flashcard Component
    ========================================================================== */
 .zen-card {
   width: 100%;
@@ -546,13 +601,13 @@ button {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-xl);
-  padding: 36px 32px 28px;
+  padding: 32px 32px 28px;
   box-shadow: var(--shadow-lg);
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
 }
 
 .zen-card.correct {
@@ -562,7 +617,7 @@ button {
 
 .zen-card.incorrect {
   border-color: var(--accent-vermilion);
-  animation: shake 0.4s var(--ease-zen);
+  animation: shake 0.4s var(--ease-modern);
 }
 
 @keyframes shake {
@@ -585,16 +640,20 @@ button {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.6px;
-  padding: 4px 10px;
+  padding: 4px 12px;
   background: var(--bg-surface);
   border-radius: var(--radius-full);
   color: var(--text-secondary);
 }
 
-.row-badge {
-  font-size: 13px;
+.stroke-badge-tag {
+  font-size: 12px;
   font-weight: 600;
   color: var(--text-muted);
+  background: var(--bg-surface);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
 }
 
 .card-audio-btn {
@@ -612,12 +671,37 @@ button {
 }
 
 .card-audio-btn:hover {
-  background: var(--accent-vermilion-soft);
-  color: var(--accent-vermilion);
-  border-color: var(--accent-vermilion);
+  background: var(--accent-primary-soft);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
 }
 
-/* Character Stage & Japanese Writing Practice Grid (田 Kanji Grid) */
+/* Modern Font Toggle Pill */
+.font-toggle-pill {
+  display: flex;
+  align-items: center;
+  background: var(--bg-surface);
+  padding: 3px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+}
+
+.font-option-btn {
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  transition: all 0.15s ease;
+}
+
+.font-option-btn.active {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Modern Character Stage & 4-Quadrant Grid */
 .character-stage {
   position: relative;
   width: 220px;
@@ -625,24 +709,24 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   cursor: pointer;
   user-select: none;
 }
 
-/* Authentic Japanese 4-Quadrant Writing Practice Box (Genkō Yōshi Grid) */
+/* Modern Clean Practice Grid Box */
 .practice-grid-box {
   position: absolute;
   width: 200px;
   height: 200px;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   border: 2px solid var(--border-subtle);
   background: var(--bg-surface);
-  transition: all 0.3s var(--ease-zen);
+  transition: all 0.25s var(--ease-modern);
   overflow: hidden;
 }
 
-/* Vertical and horizontal dashed crosshairs dividing into 4 equal quadrants */
+/* Clean dashed crosshairs */
 .practice-grid-box::before {
   content: '';
   position: absolute;
@@ -652,7 +736,7 @@ button {
   width: 1px;
   border-left: 1.5px dashed var(--border-subtle);
   transform: translateX(-50%);
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .practice-grid-box::after {
@@ -664,12 +748,12 @@ button {
   height: 1px;
   border-top: 1.5px dashed var(--border-subtle);
   transform: translateY(-50%);
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .character-stage:hover .practice-grid-box {
-  border-color: var(--accent-vermilion);
-  box-shadow: 0 4px 16px var(--accent-vermilion-glow);
+  border-color: var(--accent-primary);
+  box-shadow: 0 8px 24px var(--accent-primary-glow);
 }
 
 .zen-card.correct .practice-grid-box {
@@ -677,15 +761,15 @@ button {
   background: var(--accent-matcha-soft);
 }
 
-/* Clean, modern, high-legibility Kana character symbol */
+/* Clean, modern, crisp Kana Character */
 .kana-symbol {
   font-family: var(--font-kana);
-  font-size: 110px;
+  font-size: 112px;
   font-weight: 500;
   color: var(--text-primary);
   line-height: 1;
   z-index: 1;
-  transition: transform 0.2s var(--ease-zen);
+  transition: transform 0.2s var(--ease-modern);
 }
 
 .character-stage:hover .kana-symbol {
@@ -694,60 +778,46 @@ button {
 
 .counterpart-kana {
   position: absolute;
-  bottom: 8px;
+  bottom: 10px;
   right: 14px;
   font-family: var(--font-kana);
-  font-size: 24px;
+  font-size: 22px;
   color: var(--text-muted);
   opacity: 0.65;
   z-index: 2;
 }
 
-/* Stroke Count Badge in Practice Stage */
-.stroke-badge-tag {
-  position: absolute;
-  top: 10px;
-  left: 12px;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--text-muted);
-  background: var(--bg-card);
-  padding: 2px 7px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border-subtle);
-  z-index: 2;
-}
-
-/* Interactive Writing / Tracing Canvas */
+/* Interactive Canvas for handwriting */
 .draw-canvas {
   position: absolute;
   top: 10px;
   left: 10px;
   width: 200px;
   height: 200px;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   z-index: 5;
   cursor: crosshair;
   touch-action: none;
 }
 
+/* Canvas & Stroke Controls Bar */
 .canvas-controls-bar {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
 .canvas-btn {
-  font-size: 11px;
-  font-weight: 700;
-  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
   border-radius: var(--radius-full);
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
 }
 
 .canvas-btn:hover {
@@ -757,30 +827,30 @@ button {
 }
 
 .canvas-btn.active {
-  background: var(--accent-vermilion);
+  background: var(--accent-primary);
   color: #FFFFFF;
-  border-color: var(--accent-vermilion);
+  border-color: var(--accent-primary);
 }
 
-/* Step-by-step Stroke Order Drawer */
+/* Step-by-Step Stroke Order Card */
 .stroke-steps-card {
   width: 100%;
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  padding: 14px 18px;
-  margin-bottom: 18px;
-  animation: slideDown 0.25s var(--ease-zen);
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  animation: slideDown 0.25s var(--ease-modern);
 }
 
 .stroke-steps-title {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .stroke-steps-list {
@@ -794,60 +864,17 @@ button {
 .stroke-step-item {
   font-size: 13px;
   color: var(--text-secondary);
-  line-height: 1.4;
-  padding-left: 4px;
+  line-height: 1.5;
 }
 
 .stroke-tips-note {
   font-size: 12px;
   color: var(--accent-gold);
-  font-style: italic;
-  padding-top: 4px;
+  padding-top: 6px;
   border-top: 1px dashed var(--border-subtle);
 }
 
-/* Font Style Selector Toggle */
-.font-toggle-pill {
-  display: flex;
-  align-items: center;
-  background: var(--bg-surface);
-  padding: 2px;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--border-subtle);
-  font-size: 11px;
-}
-
-.font-option-btn {
-  padding: 3px 8px;
-  border-radius: var(--radius-full);
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text-muted);
-  transition: all 0.2s ease;
-}
-
-.font-option-btn.active {
-  background: var(--bg-card);
-  color: var(--text-primary);
-  box-shadow: var(--shadow-sm);
-}
-
-.typing-prompt {
-  font-size: 14px;
-  color: var(--text-secondary);
-  margin-bottom: 16px;
-  text-align: center;
-}
-
-.typing-prompt code {
-  background: var(--bg-surface);
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-weight: 700;
-  color: var(--accent-vermilion);
-}
-
-/* Practice Form & Big Input */
+/* Modern Input Form */
 .practice-form {
   width: 100%;
   margin-bottom: 20px;
@@ -860,14 +887,14 @@ button {
   background: var(--bg-surface);
   border: 2px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 6px 10px 6px 20px;
-  transition: all 0.2s var(--ease-zen);
+  padding: 6px 8px 6px 20px;
+  transition: all 0.2s var(--ease-modern);
 }
 
 .input-wrapper:focus-within {
-  border-color: var(--accent-vermilion);
+  border-color: var(--accent-primary);
   background: var(--bg-card);
-  box-shadow: 0 0 0 4px var(--accent-vermilion-glow);
+  box-shadow: 0 0 0 4px var(--accent-primary-glow);
 }
 
 .input-wrapper.correct {
@@ -889,7 +916,7 @@ button {
   background: transparent;
   border: none;
   outline: none;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .romaji-input::placeholder {
@@ -910,24 +937,28 @@ button {
 }
 
 .submit-check-btn {
-  padding: 10px 24px;
-  background: var(--accent-vermilion);
+  padding: 11px 26px;
+  background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%);
   color: #FFFFFF;
   border-radius: var(--radius-md);
   font-size: 15px;
   font-weight: 700;
-  transition: all 0.2s var(--ease-zen);
-  box-shadow: 0 4px 12px var(--accent-vermilion-glow);
+  transition: all 0.2s var(--ease-modern);
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
 }
 
 .submit-check-btn:hover:not(:disabled) {
-  opacity: 0.92;
+  opacity: 0.94;
   transform: translateY(-1px);
+}
+
+.submit-check-btn:active:not(:disabled) {
+  transform: scale(0.98);
 }
 
 .submit-check-btn.correct {
   background: var(--accent-matcha);
-  box-shadow: 0 4px 12px var(--accent-matcha-glow);
+  box-shadow: 0 4px 14px var(--accent-matcha-glow);
 }
 
 /* Feedback Banner */
@@ -936,7 +967,7 @@ button {
   border-radius: var(--radius-md);
   padding: 16px 20px;
   margin-bottom: 20px;
-  animation: fadeIn 0.25s var(--ease-zen);
+  animation: fadeIn 0.25s var(--ease-modern);
 }
 
 .feedback-banner.correct {
@@ -959,9 +990,9 @@ button {
 }
 
 .feedback-badge {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
-  padding: 3px 10px;
+  padding: 4px 12px;
   border-radius: var(--radius-full);
 }
 
@@ -998,9 +1029,9 @@ button {
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  padding: 6px 12px;
+  padding: 8px 14px;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.65);
   margin-bottom: 10px;
 }
 
@@ -1039,7 +1070,7 @@ button {
 }
 
 .advance-btn {
-  padding: 8px 16px;
+  padding: 8px 18px;
   background: var(--text-primary);
   color: var(--text-inverse);
   border-radius: var(--radius-md);
@@ -1057,14 +1088,14 @@ button {
   width: 100%;
   display: flex;
   gap: 12px;
-  padding: 12px 16px;
+  padding: 12px 18px;
   border-radius: var(--radius-md);
   background: var(--accent-gold-soft);
   border: 1px solid var(--accent-gold);
   margin-bottom: 18px;
   font-size: 13px;
   color: var(--text-primary);
-  animation: fadeIn 0.25s ease;
+  animation: fadeIn 0.2s ease;
 }
 
 .hint-icon {
@@ -1083,7 +1114,7 @@ button {
 }
 
 .footer-btn {
-  padding: 8px 14px;
+  padding: 8px 16px;
   border-radius: var(--radius-full);
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
@@ -1117,7 +1148,7 @@ button {
 
 .zen-tip-icon {
   font-size: 16px;
-  color: var(--accent-vermilion);
+  color: var(--accent-primary);
 }
 
 /* ==========================================================================
@@ -1127,7 +1158,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  animation: fadeIn 0.4s var(--ease-zen);
+  animation: fadeIn 0.35s var(--ease-modern);
 }
 
 .chart-controls {
@@ -1135,7 +1166,7 @@ button {
   flex-direction: column;
   gap: 12px;
   background: var(--bg-card);
-  padding: 18px 24px;
+  padding: 20px 24px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-sm);
@@ -1162,7 +1193,7 @@ button {
   font-size: 13px;
   font-weight: 600;
   color: var(--text-secondary);
-  transition: all 0.2s var(--ease-zen);
+  transition: all 0.15s ease;
 }
 
 .ctrl-btn.active {
@@ -1176,7 +1207,7 @@ button {
   color: var(--text-muted);
 }
 
-/* Kana Rows & Grid */
+/* Kana Grid Table */
 .kana-grid-table {
   display: flex;
   flex-direction: column;
@@ -1187,7 +1218,7 @@ button {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 16px 20px;
+  padding: 18px 22px;
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
@@ -1201,7 +1232,7 @@ button {
 }
 
 .row-title-jp {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: 15px;
   font-weight: 700;
   color: var(--text-primary);
@@ -1210,15 +1241,15 @@ button {
 .practice-row-link {
   font-size: 12px;
   font-weight: 600;
-  color: var(--accent-vermilion);
-  padding: 4px 10px;
+  color: var(--accent-primary);
+  padding: 4px 12px;
   border-radius: var(--radius-full);
-  background: var(--accent-vermilion-soft);
+  background: var(--accent-primary-soft);
   transition: all 0.2s ease;
 }
 
 .practice-row-link:hover {
-  background: var(--accent-vermilion);
+  background: var(--accent-primary);
   color: #FFFFFF;
 }
 
@@ -1244,13 +1275,13 @@ button {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  transition: all 0.2s var(--ease-zen);
+  transition: all 0.2s var(--ease-modern);
   position: relative;
 }
 
 .kana-tile:hover {
   background: var(--bg-card);
-  border-color: var(--accent-vermilion);
+  border-color: var(--accent-primary);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
@@ -1262,8 +1293,8 @@ button {
 
 .kana-tile.playing {
   transform: scale(0.96);
-  border-color: var(--accent-vermilion);
-  box-shadow: 0 0 0 3px var(--accent-vermilion-glow);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px var(--accent-primary-glow);
 }
 
 .tile-top {
@@ -1287,13 +1318,13 @@ button {
 }
 
 .tile-audio-btn:hover {
-  color: var(--accent-vermilion);
+  color: var(--accent-primary);
 }
 
 .tile-char {
   font-family: var(--font-kana);
-  font-size: 38px;
-  font-weight: 700;
+  font-size: 40px;
+  font-weight: 500;
   line-height: 1.1;
   margin: 6px 0;
   color: var(--text-primary);
@@ -1308,7 +1339,7 @@ button {
 .tile-rate {
   font-size: 10px;
   font-weight: 700;
-  padding: 1px 6px;
+  padding: 2px 7px;
   border-radius: var(--radius-full);
 }
 
@@ -1340,7 +1371,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 28px;
-  animation: fadeIn 0.4s var(--ease-zen);
+  animation: fadeIn 0.35s var(--ease-modern);
 }
 
 .metrics-summary-grid {
@@ -1353,11 +1384,17 @@ button {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 20px;
+  padding: 22px;
   display: flex;
   align-items: center;
   gap: 16px;
   box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .card-glyph {
@@ -1413,21 +1450,21 @@ button {
 }
 
 .progress-multi-bar {
-  height: 14px;
+  height: 12px;
   border-radius: var(--radius-full);
   background: var(--bg-surface);
   overflow: hidden;
   display: flex;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .bar-segment.mastered {
-  background: var(--accent-matcha);
+  background: linear-gradient(90deg, #10B981, #34D399);
   transition: width 0.4s ease;
 }
 
 .bar-segment.learning {
-  background: var(--accent-gold);
+  background: linear-gradient(90deg, #F59E0B, #FBBF24);
   transition: width 0.4s ease;
 }
 
@@ -1540,7 +1577,7 @@ button {
 
 .focus-practice-btn {
   padding: 12px 24px;
-  background: var(--accent-vermilion);
+  background: linear-gradient(135deg, #E11D48, #F43F5E);
   color: #FFFFFF;
   border-radius: var(--radius-md);
   font-weight: 700;
@@ -1587,7 +1624,7 @@ button {
 }
 
 .search-input {
-  padding: 8px 14px;
+  padding: 8px 16px;
   border-radius: var(--radius-full);
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
@@ -1598,7 +1635,7 @@ button {
 }
 
 .search-input:focus {
-  border-color: var(--accent-vermilion);
+  border-color: var(--accent-primary);
 }
 
 .filter-pill-group {
@@ -1607,13 +1644,13 @@ button {
 }
 
 .filter-pill {
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: var(--radius-full);
   background: var(--bg-surface);
   font-size: 12px;
   font-weight: 600;
   color: var(--text-secondary);
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
 }
 
 .filter-pill.active {
@@ -1640,8 +1677,10 @@ button {
 }
 
 .stat-tile:hover {
-  border-color: var(--accent-vermilion);
-  transform: translateY(-1px);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-sm);
 }
 
 .stat-tile-top {
@@ -1691,7 +1730,7 @@ button {
 
 .rate-badge {
   font-weight: 700;
-  padding: 1px 5px;
+  padding: 1px 6px;
   border-radius: 4px;
 }
 
@@ -1728,9 +1767,9 @@ button {
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1753,11 +1792,11 @@ button {
   display: flex;
   flex-direction: column;
   gap: 22px;
-  animation: popIn 0.25s var(--ease-zen);
+  animation: popIn 0.25s var(--ease-modern);
 }
 
 @keyframes popIn {
-  from { opacity: 0; transform: scale(0.95); }
+  from { opacity: 0; transform: scale(0.96); }
   to { opacity: 1; transform: scale(1); }
 }
 
@@ -1808,7 +1847,7 @@ button {
 }
 
 .glyph-box:hover {
-  border-color: var(--accent-vermilion);
+  border-color: var(--accent-primary);
   transform: translateY(-2px);
 }
 
@@ -1856,8 +1895,8 @@ button {
   margin-top: 6px;
   padding: 6px 14px;
   border-radius: var(--radius-full);
-  background: var(--accent-vermilion-soft);
-  color: var(--accent-vermilion);
+  background: var(--accent-primary-soft);
+  color: var(--accent-primary);
   font-size: 13px;
   font-weight: 700;
   transition: opacity 0.2s ease;
@@ -1897,7 +1936,7 @@ button {
   background: var(--bg-surface);
   padding: 12px 16px;
   border-radius: var(--radius-md);
-  border-left: 3px solid var(--accent-gold);
+  border-left: 3px solid var(--accent-primary);
 }
 
 .example-card {
@@ -1912,7 +1951,7 @@ button {
 }
 
 .example-card:hover {
-  background: var(--accent-vermilion-soft);
+  background: var(--accent-primary-soft);
 }
 
 .word-jp {
@@ -1985,16 +2024,16 @@ button {
   width: 100%;
   padding: 12px;
   border-radius: var(--radius-md);
-  background: var(--accent-vermilion);
+  background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%);
   color: #FFFFFF;
   font-size: 14px;
   font-weight: 700;
-  box-shadow: 0 4px 14px var(--accent-vermilion-glow);
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
   transition: all 0.2s ease;
 }
 
 .action-btn.primary:hover {
-  opacity: 0.92;
+  opacity: 0.94;
 }
 
 /* ==========================================================================
