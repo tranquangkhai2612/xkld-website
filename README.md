@@ -1,6 +1,6 @@
-# XKLD Website - かな道場 (Kana Dojo)
+# XKLD - かな道場 (Frontend: `xkld-website`)
 
-A modern, serene Japanese Hiragana and Katakana study web application built with **React**, **TypeScript**, and **Vite**, featuring a Japanese Zen aesthetic, native audio pronunciation, typing recall tests, and spaced repetition.
+A modern, clean Japanese Hiragana and Katakana study web application built with **React**, **TypeScript**, and **Vite**, featuring modern Japanese typography, native audio pronunciation, typing recall tests, stroke order guides, and spaced repetition.
 
 ## ✨ Features
 
@@ -21,10 +21,10 @@ A modern, serene Japanese Hiragana and Katakana study web application built with
   - Tracks streak records, accuracy rates, and total answers.
   - Highlights troubled characters with a one-click targeted focus drill.
 
-- **⛩ Zen Aesthetics**:
-  - Washi Light & Zen Night themes.
-  - Google Fonts (*Shippori Mincho*, *Zen Maru Gothic*, and *Plus Jakarta Sans*).
-  - Ensō circular ink wash and Hanko red seal details.
+- **⛩ Modern Clean Aesthetics**:
+  - Light & Zen Dark themes with electric indigo accents and glassmorphic cards.
+  - Modern Japanese handwriting typography (*Zen Maru Gothic*, *Klee One*, *Noto Sans JP*, and *Plus Jakarta Sans*).
+  - Quadrant handwriting canvas (田 grid) with animated stroke-by-stroke guides.
 
 ## 🚀 Getting Started
 

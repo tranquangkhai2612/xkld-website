@@ -36,8 +36,8 @@ export const Header: React.FC<HeaderProps> = ({
             <span>あ</span>
           </div>
           <div className="brand-text">
-            <h1 className="brand-title">かな道場 <span className="brand-sub">XKLD Website</span></h1>
-            <p className="brand-tagline">Japanese Hiragana & Katakana Mastery • XKLD Website</p>
+            <h1 className="brand-title">かな道場 <span className="brand-sub">XKLD</span></h1>
+            <p className="brand-tagline">Japanese Hiragana & Katakana Mastery • XKLD</p>
           </div>
         </div>
 

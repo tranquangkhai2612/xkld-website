@@ -158,7 +158,7 @@ export function App() {
       {/* Zen Footer */}
       <footer className="zen-footer">
         <span className="footer-quote">千里の道も一歩から — "A journey of a thousand miles begins with a single step."</span>
-        <span>XKLD Website • かな道場</span>
+        <span>XKLD • かな道場</span>
       </footer>
     </div>
   );
