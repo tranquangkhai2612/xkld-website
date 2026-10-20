@@ -22,11 +22,11 @@
   --text-muted: #94A3B8;
   --text-inverse: #FFFFFF;
 
-  /* Modern Vibrant Accent Palette */
-  --accent-primary: #4F46E5;        /* Electric Indigo */
-  --accent-primary-hover: #4338CA;
-  --accent-primary-soft: #EEF2FF;
-  --accent-primary-glow: rgba(79, 70, 229, 0.2);
+  /* Modern Vibrant Accent Palette (Zen Matcha Emerald) */
+  --accent-primary: #059669;        /* Deep Zen Matcha Emerald */
+  --accent-primary-hover: #047857;  /* Forest Matcha Hover */
+  --accent-primary-soft: #ECFDF5;   /* Crisp Mint / Matcha Wash */
+  --accent-primary-glow: rgba(5, 150, 105, 0.22);
 
   --accent-vermilion: #E11D48;      /* Vibrant Rose / Crimson */
   --accent-vermilion-soft: #FFF1F2;
@@ -43,7 +43,7 @@
   --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.03);
   --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.03);
   --shadow-lg: 0 20px 35px -10px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.04);
-  --shadow-glow: 0 0 40px rgba(79, 70, 229, 0.12);
+  --shadow-glow: 0 0 40px rgba(5, 150, 105, 0.12);
 
   /* Modern Smooth Radius */
   --radius-xs: 6px;
@@ -71,10 +71,10 @@
   --text-muted: #64748B;
   --text-inverse: #0B0F19;
 
-  --accent-primary: #6366F1;
-  --accent-primary-hover: #818CF8;
-  --accent-primary-soft: rgba(99, 102, 241, 0.15);
-  --accent-primary-glow: rgba(99, 102, 241, 0.35);
+  --accent-primary: #10B981;        /* Luminous Matcha Emerald */
+  --accent-primary-hover: #34D399;  /* Mint Emerald Glow */
+  --accent-primary-soft: rgba(16, 185, 129, 0.15);
+  --accent-primary-glow: rgba(16, 185, 129, 0.35);
 
   --accent-vermilion: #F43F5E;
   --accent-vermilion-soft: rgba(244, 63, 94, 0.15);
@@ -90,7 +90,7 @@
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 12px 28px -5px rgba(0, 0, 0, 0.45);
   --shadow-lg: 0 24px 45px -10px rgba(0, 0, 0, 0.6);
-  --shadow-glow: 0 0 50px rgba(99, 102, 241, 0.2);
+  --shadow-glow: 0 0 50px rgba(16, 185, 129, 0.2);
 }
 
 /* Font Switching Support */
@@ -217,7 +217,7 @@ button {
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  background: linear-gradient(135deg, #059669 0%, #0D9488 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -225,7 +225,7 @@ button {
   font-family: var(--font-kana);
   font-weight: 700;
   font-size: 22px;
-  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 8px 20px rgba(5, 150, 105, 0.3);
   transform: none;
   border: 1px solid rgba(255, 255, 255, 0.25);
   transition: transform 0.2s var(--ease-modern), box-shadow 0.2s var(--ease-modern);
@@ -233,7 +233,13 @@ button {
 
 .brand:hover .modern-app-icon, .brand:hover .hanko-seal {
   transform: translateY(-2px) scale(1.04);
-  box-shadow: 0 12px 26px rgba(79, 70, 229, 0.4);
+  box-shadow: 0 12px 26px rgba(5, 150, 105, 0.4);
+}
+
+[data-theme='zen-dark'] .modern-app-icon,
+[data-theme='zen-dark'] .hanko-seal {
+  background: linear-gradient(135deg, #10B981 0%, #14B8A6 100%);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
 }
 
 .brand-title {
@@ -250,7 +256,7 @@ button {
 .brand-sub {
   font-size: 13px;
   font-weight: 700;
-  background: linear-gradient(135deg, #4F46E5, #7C3AED);
+  background: linear-gradient(135deg, #059669, #0D9488);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: 0.5px;
@@ -258,7 +264,7 @@ button {
 }
 
 [data-theme='zen-dark'] .brand-sub {
-  background: linear-gradient(135deg, #818CF8, #C084FC);
+  background: linear-gradient(135deg, #34D399, #2DD4BF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -938,13 +944,13 @@ button {
 
 .submit-check-btn {
   padding: 11px 26px;
-  background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%);
+  background: linear-gradient(135deg, var(--accent-primary) 0%, #0D9488 100%);
   color: #FFFFFF;
   border-radius: var(--radius-md);
   font-size: 15px;
   font-weight: 700;
   transition: all 0.2s var(--ease-modern);
-  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 4px 14px var(--accent-primary-glow);
 }
 
 .submit-check-btn:hover:not(:disabled) {
@@ -2024,11 +2030,11 @@ button {
   width: 100%;
   padding: 12px;
   border-radius: var(--radius-md);
-  background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%);
+  background: linear-gradient(135deg, var(--accent-primary) 0%, #0D9488 100%);
   color: #FFFFFF;
   font-size: 14px;
   font-weight: 700;
-  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 4px 14px var(--accent-primary-glow);
   transition: all 0.2s ease;
 }
 
