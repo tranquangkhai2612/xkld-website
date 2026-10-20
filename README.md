@@ -1,4 +1,4 @@
-# XKLD - かな道場 (Kana Dojo)
+# XKLD Website - かな道場 (Kana Dojo)
 
 A modern, serene Japanese Hiragana and Katakana study web application built with **React**, **TypeScript**, and **Vite**, featuring a Japanese Zen aesthetic, native audio pronunciation, typing recall tests, and spaced repetition.
 
