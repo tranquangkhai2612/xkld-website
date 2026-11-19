@@ -13,12 +13,13 @@ import { PracticeDojo } from './components/PracticeDojo';
 import { KanaChart } from './components/KanaChart';
 import { StatsView } from './components/StatsView';
 import { CharacterDetailModal } from './components/CharacterDetailModal';
+import { DongDuVocabView } from './components/dongdu/DongDuVocabView';
 import { soundFx } from './utils/audio';
 
 export function App() {
   const [settings, setSettings] = useState<AppSettings>(() => loadSettings());
   const [stats, setStats] = useState<UserStats>(() => loadStats());
-  const [activeTab, setActiveTab] = useState<'practice' | 'chart' | 'stats'>('practice');
+  const [activeTab, setActiveTab] = useState<'practice' | 'vocab' | 'chart' | 'stats'>('vocab');
   const [detailKana, setDetailKana] = useState<KanaItem | null>(null);
 
   // Sync theme and font with HTML document attribute
@@ -124,6 +125,8 @@ export function App() {
             onOpenCharacterDetail={(item) => setDetailKana(item)}
           />
         )}
+
+        {activeTab === 'vocab' && <DongDuVocabView />}
 
         {activeTab === 'chart' && (
           <KanaChart

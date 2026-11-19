@@ -3,8 +3,8 @@ import type { AppSettings } from '../utils/storage';
 import { soundFx } from '../utils/audio';
 
 interface HeaderProps {
-  activeTab: 'practice' | 'chart' | 'stats';
-  setActiveTab: (tab: 'practice' | 'chart' | 'stats') => void;
+  activeTab: 'practice' | 'vocab' | 'chart' | 'stats';
+  setActiveTab: (tab: 'practice' | 'vocab' | 'chart' | 'stats') => void;
   settings: AppSettings;
   updateSettings: (newSettings: Partial<AppSettings>) => void;
   currentStreak: number;
@@ -136,7 +136,15 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={() => setActiveTab('practice')}
         >
           <span className="tab-kanji">錬</span>
-          <span className="tab-title">Practice Dojo</span>
+          <span className="tab-title">Kana Dojo</span>
+        </button>
+        <button
+          type="button"
+          className={`nav-tab ${activeTab === 'vocab' ? 'active' : ''}`}
+          onClick={() => setActiveTab('vocab')}
+        >
+          <span className="tab-kanji">語</span>
+          <span className="tab-title">Từ vựng Đông Du</span>
         </button>
         <button
           type="button"
