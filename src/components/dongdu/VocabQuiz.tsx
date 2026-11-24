@@ -196,12 +196,36 @@ export const VocabQuiz: React.FC<VocabQuizProps> = ({
     if (isAnswered || !currentQuestionItem || !typingInput.trim()) return;
 
     setIsAnswered(true);
+    const normalizeRomaji = (s: string) =>
+      s
+        .trim()
+        .toLowerCase()
+        .replace(/ā/g, 'a')
+        .replace(/ī/g, 'i')
+        .replace(/ū/g, 'u')
+        .replace(/ē/g, 'e')
+        .replace(/ō/g, 'o');
+
+    const expandLongVowels = (s: string) =>
+      s
+        .trim()
+        .toLowerCase()
+        .replace(/ā/g, 'aa')
+        .replace(/ī/g, 'ii')
+        .replace(/ū/g, 'uu')
+        .replace(/ē/g, 'ee')
+        .replace(/ō/g, 'ou');
+
     const normalizedInput = typingInput.trim().toLowerCase();
     const correctKana = currentQuestionItem.kana.trim().toLowerCase();
     const correctRomaji = currentQuestionItem.romaji.trim().toLowerCase();
 
     const kanaAlternatives = correctKana.split('/').map((s) => s.trim());
-    const romajiAlternatives = correctRomaji.split('/').map((s) => s.trim());
+    const romajiAlternatives = correctRomaji.split('/').flatMap((s) => [
+      s.trim(),
+      normalizeRomaji(s),
+      expandLongVowels(s),
+    ]);
 
     const matched =
       kanaAlternatives.includes(normalizedInput) ||

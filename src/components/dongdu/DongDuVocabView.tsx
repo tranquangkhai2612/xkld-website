@@ -13,6 +13,10 @@ export const DongDuVocabView: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   const currentLesson = getLesson(selectedLessonNum);
+  const categoryIds = new Set(currentLesson.categories.map((c) => c.id));
+  const hasBasicNumbers = categoryIds.has('numbers') || categoryIds.has('age_counters');
+  const hasLargeNumbers = categoryIds.has('numbers_large') || categoryIds.has('floor_counters');
+  const hasNumbersDrill = hasBasicNumbers || hasLargeNumbers;
 
   return (
     <div className="dongdu-vocab-view">
@@ -36,8 +40,20 @@ export const DongDuVocabView: React.FC = () => {
             className="lesson-dropdown"
             value={selectedLessonNum}
             onChange={(e) => {
-              setSelectedLessonNum(Number(e.target.value));
+              const nextLessonNum = Number(e.target.value);
+              const nextLesson = getLesson(nextLessonNum);
+              const nextCats = new Set(nextLesson.categories.map((c) => c.id));
+              const nextHasDrill =
+                nextCats.has('numbers') ||
+                nextCats.has('age_counters') ||
+                nextCats.has('numbers_large') ||
+                nextCats.has('floor_counters');
+
+              setSelectedLessonNum(nextLessonNum);
               setSelectedCategory('all');
+              if (!nextHasDrill && activeStudyMode === 'numbers') {
+                setActiveStudyMode('flashcard');
+              }
             }}
           >
             {DONGDU_LESSONS.map((l) => (
@@ -78,20 +94,25 @@ export const DongDuVocabView: React.FC = () => {
           <span className="subnav-text">Tra cứu từ vựng</span>
         </button>
 
-        <button
-          type="button"
-          className={`vocab-subnav-btn ${activeStudyMode === 'numbers' ? 'active' : ''}`}
-          onClick={() => setActiveStudyMode('numbers')}
-        >
-          <span className="subnav-icon">🔢</span>
-          <span className="subnav-text">Số đếm & Tuổi</span>
-        </button>
+        {hasNumbersDrill && (
+          <button
+            type="button"
+            className={`vocab-subnav-btn ${activeStudyMode === 'numbers' ? 'active' : ''}`}
+            onClick={() => setActiveStudyMode('numbers')}
+          >
+            <span className="subnav-icon">🔢</span>
+            <span className="subnav-text">
+              {hasLargeNumbers ? 'Số lớn & Tầng lầu' : 'Số đếm & Tuổi'}
+            </span>
+          </button>
+        )}
       </div>
 
       {/* Active Sub-Mode View */}
       <div className="vocab-mode-body">
         {activeStudyMode === 'flashcard' && (
           <VocabFlashcard
+            key={currentLesson.metadata.lesson}
             vocabList={currentLesson.vocabulary}
             categories={currentLesson.categories}
             selectedCategory={selectedCategory}
@@ -101,6 +122,7 @@ export const DongDuVocabView: React.FC = () => {
 
         {activeStudyMode === 'quiz' && (
           <VocabQuiz
+            key={currentLesson.metadata.lesson}
             vocabList={currentLesson.vocabulary}
             categories={currentLesson.categories}
             selectedCategory={selectedCategory}
@@ -110,6 +132,7 @@ export const DongDuVocabView: React.FC = () => {
 
         {activeStudyMode === 'list' && (
           <VocabList
+            key={currentLesson.metadata.lesson}
             vocabList={currentLesson.vocabulary}
             categories={currentLesson.categories}
             selectedCategory={selectedCategory}
@@ -117,8 +140,9 @@ export const DongDuVocabView: React.FC = () => {
           />
         )}
 
-        {activeStudyMode === 'numbers' && (
+        {activeStudyMode === 'numbers' && hasNumbersDrill && (
           <VocabNumbersDrill
+            key={currentLesson.metadata.lesson}
             vocabList={currentLesson.vocabulary}
           />
         )}

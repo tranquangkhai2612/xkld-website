@@ -1,11 +1,13 @@
 import type { DongDuLesson, DongDuVocabItem } from '../types/vocabulary';
-import lesson1Json from '../assets/dongdu/dongdu-1-vocabulary.json';
+import lesson1Json from '../assets/dongdu/dong-du-bai-1-vocabulary.json';
+import lesson2Json from '../assets/dongdu/dong-du-bai-2-vocabulary.json';
+import lesson3Json from '../assets/dongdu/dong-du-bai-3-vocabulary.json';
 
 // Registered lessons from the Dong Du curriculum
 export const DONGDU_LESSONS: DongDuLesson[] = [
   lesson1Json as DongDuLesson,
-  // Future lessons:
-  // lesson2Json as DongDuLesson,
+  lesson2Json as DongDuLesson,
+  lesson3Json as DongDuLesson,
 ];
 
 export function getLesson(lessonNumber: number): DongDuLesson {

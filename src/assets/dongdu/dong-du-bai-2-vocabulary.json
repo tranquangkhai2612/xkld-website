@@ -1,0 +1,665 @@
+{
+  "metadata": {
+    "title": "Từ vựng Tiếng Nhật Sơ cấp 1 - Bài 2 (Nhật ngữ Đông Du)",
+    "source": "Trường Nhật ngữ Đông Du (初級①・第2課)",
+    "level": "N5 / Sơ cấp 1",
+    "lesson": 2,
+    "description": "Cơ sở dữ liệu từ vựng đầy đủ bao gồm Đại từ chỉ vật (これ, それ, あれ), Đồ dùng học tập & Đồ vật thường ngày, Phương tiện đi lại, Ngôn ngữ, Mẫu câu hỏi và Phần mở rộng.",
+    "language_pairs": [
+      "ja",
+      "vi"
+    ],
+    "schema_version": "1.0.0",
+    "total_entries": 56
+  },
+  "categories": [
+    {
+      "id": "demonstratives_objects",
+      "name_vi": "Đại từ chỉ vật & Từ chỉ định",
+      "name_ja": "指示代名詞・連体詞"
+    },
+    {
+      "id": "everyday_objects",
+      "name_vi": "Đồ dùng học tập & Vật dụng hàng ngày",
+      "name_ja": "文房具・日常品"
+    },
+    {
+      "id": "vehicles",
+      "name_vi": "Phương tiện giao thông",
+      "name_ja": "乗り物・交通機関"
+    },
+    {
+      "id": "languages",
+      "name_vi": "Ngôn ngữ",
+      "name_ja": "言語"
+    },
+    {
+      "id": "question_phrases",
+      "name_vi": "Mẫu câu hỏi & Nghi vấn từ",
+      "name_ja": "疑問詞・表現"
+    },
+    {
+      "id": "extended_vocabulary",
+      "name_vi": "Phần mở rộng: Đồ vật, Địa điểm & Từ bổ trợ",
+      "name_ja": "拡張語彙"
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "l2_01",
+      "category": "demonstratives_objects",
+      "kana": "これ",
+      "kanji": "",
+      "romaji": "kore",
+      "vietnamese": "Cái này",
+      "han_viet": "",
+      "part_of_speech": "pronoun",
+      "notes": "Dùng để chỉ vật gần người nói, xa người nghe"
+    },
+    {
+      "id": "l2_02",
+      "category": "demonstratives_objects",
+      "kana": "それ",
+      "kanji": "",
+      "romaji": "sore",
+      "vietnamese": "Cái đó",
+      "han_viet": "",
+      "part_of_speech": "pronoun",
+      "notes": "Dùng để chỉ vật gần người nghe, xa người nói"
+    },
+    {
+      "id": "l2_03",
+      "category": "demonstratives_objects",
+      "kana": "あれ",
+      "kanji": "",
+      "romaji": "are",
+      "vietnamese": "Cái kia",
+      "han_viet": "",
+      "part_of_speech": "pronoun",
+      "notes": "Dùng để chỉ vật xa cả người nói và người nghe"
+    },
+    {
+      "id": "l2_04",
+      "category": "demonstratives_objects",
+      "kana": "どれですか？",
+      "kanji": "",
+      "romaji": "dore desu ka?",
+      "vietnamese": "Cái nào?",
+      "han_viet": "",
+      "part_of_speech": "expression",
+      "notes": "Từ để hỏi lựa chọn từ 3 vật trở lên"
+    },
+    {
+      "id": "l2_05",
+      "category": "demonstratives_objects",
+      "kana": "この 〜",
+      "kanji": "",
+      "romaji": "kono ~",
+      "vietnamese": "〜 này",
+      "han_viet": "",
+      "part_of_speech": "prenoun_adjective",
+      "notes": "Đi liền trước danh từ (vật gần người nói)"
+    },
+    {
+      "id": "l2_06",
+      "category": "demonstratives_objects",
+      "kana": "その 〜",
+      "kanji": "",
+      "romaji": "sono ~",
+      "vietnamese": "〜 đó",
+      "han_viet": "",
+      "part_of_speech": "prenoun_adjective",
+      "notes": "Đi liền trước danh từ (vật gần người nghe)"
+    },
+    {
+      "id": "l2_07",
+      "category": "demonstratives_objects",
+      "kana": "あの 〜",
+      "kanji": "",
+      "romaji": "ano ~",
+      "vietnamese": "〜 kia",
+      "han_viet": "",
+      "part_of_speech": "prenoun_adjective",
+      "notes": "Đi liền trước danh từ (vật xa cả người nói và người nghe)"
+    },
+    {
+      "id": "l2_08",
+      "category": "demonstratives_objects",
+      "kana": "どの 〜ですか？",
+      "kanji": "",
+      "romaji": "dono ~ desu ka?",
+      "vietnamese": "Là 〜 nào?",
+      "han_viet": "",
+      "part_of_speech": "expression",
+      "notes": "Từ để hỏi đi cùng danh từ bổ nghĩa"
+    },
+    {
+      "id": "l2_09",
+      "category": "everyday_objects",
+      "kana": "かばん",
+      "kanji": "鞄",
+      "romaji": "kaban",
+      "vietnamese": "Cặp, túi xách",
+      "han_viet": "",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_10",
+      "category": "everyday_objects",
+      "kana": "ほん",
+      "kanji": "本",
+      "romaji": "hon",
+      "vietnamese": "Sách",
+      "han_viet": "Bản",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_11",
+      "category": "everyday_objects",
+      "kana": "じしょ",
+      "kanji": "辞書",
+      "romaji": "jisho",
+      "vietnamese": "Từ điển",
+      "han_viet": "Từ thư",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_12",
+      "category": "everyday_objects",
+      "kana": "てちょう",
+      "kanji": "手帳",
+      "romaji": "techō",
+      "vietnamese": "Sổ tay",
+      "han_viet": "Thủ trướng",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_13",
+      "category": "everyday_objects",
+      "kana": "ふでばこ",
+      "kanji": "筆箱",
+      "romaji": "fudebako",
+      "vietnamese": "Hộp bút",
+      "han_viet": "Bút tương",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_14",
+      "category": "everyday_objects",
+      "kana": "えんぴつ",
+      "kanji": "鉛筆",
+      "romaji": "enpitsu",
+      "vietnamese": "Bút chì chuốt",
+      "han_viet": "Duyên bút",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_15",
+      "category": "everyday_objects",
+      "kana": "けしごむ",
+      "kanji": "消しゴム",
+      "romaji": "keshigomu",
+      "vietnamese": "Cục gôm, tẩy",
+      "han_viet": "Tiêu gom",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_16",
+      "category": "everyday_objects",
+      "kana": "しんぶん",
+      "kanji": "新聞",
+      "romaji": "shinbun",
+      "vietnamese": "Tờ báo",
+      "han_viet": "Tân văn",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_17",
+      "category": "everyday_objects",
+      "kana": "ざっし",
+      "kanji": "雑誌",
+      "romaji": "zasshi",
+      "vietnamese": "Tạp chí",
+      "han_viet": "Tạp chí",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_18",
+      "category": "everyday_objects",
+      "kana": "つくえ",
+      "kanji": "机",
+      "romaji": "tsukue",
+      "vietnamese": "Cái bàn",
+      "han_viet": "Cơ",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_19",
+      "category": "everyday_objects",
+      "kana": "いす",
+      "kanji": "椅子",
+      "romaji": "isu",
+      "vietnamese": "Cái ghế",
+      "han_viet": "Y tử",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_20",
+      "category": "everyday_objects",
+      "kana": "せんぷうき",
+      "kanji": "扇風機",
+      "romaji": "senpūki",
+      "vietnamese": "Quạt máy",
+      "han_viet": "Phiến phong cơ",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_21",
+      "category": "everyday_objects",
+      "kana": "かさ",
+      "kanji": "傘",
+      "romaji": "kasa",
+      "vietnamese": "Ô, dù",
+      "han_viet": "Tản",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_22",
+      "category": "everyday_objects",
+      "kana": "ぼうし",
+      "kanji": "帽子",
+      "romaji": "bōshi",
+      "vietnamese": "Nón, mũ",
+      "han_viet": "Mạo tử",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_23",
+      "category": "everyday_objects",
+      "kana": "めがね",
+      "kanji": "眼鏡",
+      "romaji": "megane",
+      "vietnamese": "Mắt kính",
+      "han_viet": "Nhãn kính",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_24",
+      "category": "everyday_objects",
+      "kana": "とけい",
+      "kanji": "時計",
+      "romaji": "tokei",
+      "vietnamese": "Đồng hồ",
+      "han_viet": "Thời kế",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_25",
+      "category": "everyday_objects",
+      "kana": "さいふ",
+      "kanji": "財布",
+      "romaji": "saifu",
+      "vietnamese": "Ví tiền",
+      "han_viet": "Tài bố",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_26",
+      "category": "everyday_objects",
+      "kana": "くつ",
+      "kanji": "靴",
+      "romaji": "kutsu",
+      "vietnamese": "Giày",
+      "han_viet": "Ngoa",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_27",
+      "category": "everyday_objects",
+      "kana": "でんわ",
+      "kanji": "電話",
+      "romaji": "denwa",
+      "vietnamese": "Điện thoại",
+      "han_viet": "Điện thoại",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_28",
+      "category": "everyday_objects",
+      "kana": "かぎ",
+      "kanji": "鍵",
+      "romaji": "kagi",
+      "vietnamese": "Chìa khóa",
+      "han_viet": "Kiện",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_29",
+      "category": "everyday_objects",
+      "kana": "おかし",
+      "kanji": "お菓子",
+      "romaji": "okashi",
+      "vietnamese": "Bánh kẹo",
+      "han_viet": "Quả tử",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_30",
+      "category": "vehicles",
+      "kana": "じてんしゃ",
+      "kanji": "自転車",
+      "romaji": "jitensha",
+      "vietnamese": "Xe đạp",
+      "han_viet": "Tự chuyển xa",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_31",
+      "category": "vehicles",
+      "kana": "じどうしゃ",
+      "kanji": "自動車",
+      "romaji": "jidōsha",
+      "vietnamese": "Xe hơi, ô tô",
+      "han_viet": "Tự động xa",
+      "part_of_speech": "noun",
+      "notes": "Trang trọng hơn くるま"
+    },
+    {
+      "id": "l2_32",
+      "category": "vehicles",
+      "kana": "くるま",
+      "kanji": "車",
+      "romaji": "kuruma",
+      "vietnamese": "Xe hơi, xe ô tô",
+      "han_viet": "Xa",
+      "part_of_speech": "noun",
+      "notes": "Dùng phổ biến trong giao tiếp hàng ngày"
+    },
+    {
+      "id": "l2_33",
+      "category": "vehicles",
+      "kana": "ばいく",
+      "kanji": "バイク",
+      "romaji": "baiku",
+      "vietnamese": "Xe máy",
+      "han_viet": "",
+      "part_of_speech": "noun",
+      "notes": "Katakana (Bike)"
+    },
+    {
+      "id": "l2_34",
+      "category": "languages",
+      "kana": "〜ご",
+      "kanji": "〜語",
+      "romaji": "~go",
+      "vietnamese": "Tiếng 〜",
+      "han_viet": "Ngữ",
+      "part_of_speech": "suffix",
+      "notes": "Hậu tố ngôn ngữ (quốc gia + ご)"
+    },
+    {
+      "id": "l2_35",
+      "category": "languages",
+      "kana": "にほんご",
+      "kanji": "日本語",
+      "romaji": "nihongo",
+      "vietnamese": "Tiếng Nhật",
+      "han_viet": "Nhật Bản ngữ",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_36",
+      "category": "languages",
+      "kana": "ちゅうごくご",
+      "kanji": "中国語",
+      "romaji": "chūgokugo",
+      "vietnamese": "Tiếng Trung Quốc",
+      "han_viet": "Trung Quốc ngữ",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_37",
+      "category": "languages",
+      "kana": "えいご",
+      "kanji": "英語",
+      "romaji": "eigo",
+      "vietnamese": "Tiếng Anh",
+      "han_viet": "Anh ngữ",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_38",
+      "category": "languages",
+      "kana": "なにご？",
+      "kanji": "何語",
+      "romaji": "nanigo?",
+      "vietnamese": "Tiếng gì?",
+      "han_viet": "Hà ngữ",
+      "part_of_speech": "expression",
+      "notes": "Hỏi về ngôn ngữ"
+    },
+    {
+      "id": "l2_39",
+      "category": "question_phrases",
+      "kana": "なんですか？",
+      "kanji": "何ですか",
+      "romaji": "nan desu ka?",
+      "vietnamese": "Là cái gì?",
+      "han_viet": "Hà",
+      "part_of_speech": "expression",
+      "notes": "Hỏi thông tin đồ vật"
+    },
+    {
+      "id": "l2_40",
+      "category": "question_phrases",
+      "kana": "だれの 〜？",
+      "kanji": "誰の〜",
+      "romaji": "dare no ~?",
+      "vietnamese": "〜 của ai?",
+      "han_viet": "",
+      "part_of_speech": "expression",
+      "notes": "Hỏi về sở hữu"
+    },
+    {
+      "id": "l2_41",
+      "category": "question_phrases",
+      "kana": "どこの 〜？",
+      "kanji": "",
+      "romaji": "doko no ~?",
+      "vietnamese": "〜 của nước nào / hãng nào / nơi nào?",
+      "han_viet": "",
+      "part_of_speech": "expression",
+      "notes": "Hỏi xuất xứ hoặc thương hiệu sản xuất"
+    },
+    {
+      "id": "l2_42",
+      "category": "question_phrases",
+      "kana": "なんの 〜？",
+      "kanji": "何の〜",
+      "romaji": "nan no ~?",
+      "vietnamese": "〜 gì?",
+      "han_viet": "",
+      "part_of_speech": "expression",
+      "notes": "Hỏi về chủ đề/thể loại (ví dụ: なんの ほんですか)"
+    },
+    {
+      "id": "l2_43",
+      "category": "question_phrases",
+      "kana": "N1 と N2",
+      "kanji": "",
+      "romaji": "N1 to N2",
+      "vietnamese": "N1 và N2",
+      "han_viet": "",
+      "part_of_speech": "particle",
+      "notes": "Trợ từ nối danh từ"
+    },
+    {
+      "id": "l2_44",
+      "category": "extended_vocabulary",
+      "kana": "がっこう",
+      "kanji": "学校",
+      "romaji": "gakkō",
+      "vietnamese": "Trường học",
+      "han_viet": "Học hiệu",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_45",
+      "category": "extended_vocabulary",
+      "kana": "かいしゃ",
+      "kanji": "会社",
+      "romaji": "kaisha",
+      "vietnamese": "Công ty",
+      "han_viet": "Hội xã",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_46",
+      "category": "extended_vocabulary",
+      "kana": "へや",
+      "kanji": "部屋",
+      "romaji": "heya",
+      "vietnamese": "Phòng, gian phòng",
+      "han_viet": "Bộ ốc",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_47",
+      "category": "extended_vocabulary",
+      "kana": "もの",
+      "kanji": "物",
+      "romaji": "mono",
+      "vietnamese": "Vật, đồ vật, hàng hóa",
+      "han_viet": "Vật",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_48",
+      "category": "extended_vocabulary",
+      "kana": "こくばん",
+      "kanji": "黒板",
+      "romaji": "kokuban",
+      "vietnamese": "Bảng đen",
+      "han_viet": "Hắc bản",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_49",
+      "category": "extended_vocabulary",
+      "kana": "でんき",
+      "kanji": "電気",
+      "romaji": "denki",
+      "vietnamese": "Điện, đèn điện",
+      "han_viet": "Điện khí",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_50",
+      "category": "extended_vocabulary",
+      "kana": "かめら",
+      "kanji": "カメラ",
+      "romaji": "kamera",
+      "vietnamese": "Máy chụp hình, máy ảnh",
+      "han_viet": "",
+      "part_of_speech": "noun",
+      "notes": "Katakana (Camera)"
+    },
+    {
+      "id": "l2_51",
+      "category": "extended_vocabulary",
+      "kana": "のーと",
+      "kanji": "ノート",
+      "romaji": "nōto",
+      "vietnamese": "Vở, quyển vở",
+      "han_viet": "",
+      "part_of_speech": "noun",
+      "notes": "Katakana (Notebook)"
+    },
+    {
+      "id": "l2_52",
+      "category": "extended_vocabulary",
+      "kana": "くーらー",
+      "kanji": "クーラー",
+      "romaji": "kūrā",
+      "vietnamese": "Máy lạnh, điều hòa",
+      "han_viet": "",
+      "part_of_speech": "noun",
+      "notes": "Katakana (Cooler)"
+    },
+    {
+      "id": "l2_53",
+      "category": "extended_vocabulary",
+      "kana": "おとこ",
+      "kanji": "男",
+      "romaji": "otoko",
+      "vietnamese": "Đàn ông, nam giới",
+      "han_viet": "Nam",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_54",
+      "category": "extended_vocabulary",
+      "kana": "おんな",
+      "kanji": "女",
+      "romaji": "onna",
+      "vietnamese": "Phụ nữ, nữ giới",
+      "han_viet": "Nữ",
+      "part_of_speech": "noun",
+      "notes": ""
+    },
+    {
+      "id": "l2_55",
+      "category": "extended_vocabulary",
+      "kana": "はい、そうです",
+      "kanji": "",
+      "romaji": "hai, sō desu",
+      "vietnamese": "Vâng, đúng vậy",
+      "han_viet": "",
+      "part_of_speech": "expression",
+      "notes": "Khẳng định danh từ"
+    },
+    {
+      "id": "l2_56",
+      "category": "extended_vocabulary",
+      "kana": "いいえ、ちがいます",
+      "kanji": "いいえ、違います",
+      "romaji": "iie, chigaimasu",
+      "vietnamese": "Không, không phải vậy",
+      "han_viet": "Vi",
+      "part_of_speech": "expression",
+      "notes": "Phủ định danh từ"
+    }
+  ]
+}
