@@ -21,6 +21,7 @@ export const VocabFlashcard: React.FC<VocabFlashcardProps> = ({
   const [shuffledOrder, setShuffledOrder] = useState<DongDuVocabItem[]>([]);
   const [showHanViet, setShowHanViet] = useState(true);
   const [showKana, setShowKana] = useState(true);
+  const [autoSpeak, setAutoSpeak] = useState(true);
 
   // Filter items based on selected category
   const filteredItems = useMemo(() => {
@@ -83,9 +84,20 @@ export const VocabFlashcard: React.FC<VocabFlashcardProps> = ({
   const handleSpeak = useCallback((e?: React.MouseEvent) => {
     e?.stopPropagation();
     if (!currentItem) return;
-    const textToSpeak = currentItem.kanji || currentItem.kana;
-    soundFx.speakJapanese(textToSpeak);
+    const textToSpeak = currentItem.kana || currentItem.kanji || '';
+    soundFx.speakJapaneseRepeated(textToSpeak, 3);
   }, [currentItem]);
+
+  // Auto pronounce 3 times whenever jumping to a new card
+  useEffect(() => {
+    if (!currentItem || !autoSpeak) return;
+    const textToSpeak = currentItem.kana || currentItem.kanji || '';
+    soundFx.speakJapaneseRepeated(textToSpeak, 3);
+
+    return () => {
+      soundFx.cancelSpeech();
+    };
+  }, [currentItem, autoSpeak]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -155,6 +167,20 @@ export const VocabFlashcard: React.FC<VocabFlashcardProps> = ({
         <div className="flashcard-toggles">
           <button
             type="button"
+            className={`toggle-pill ${autoSpeak ? 'active' : ''}`}
+            onClick={() => {
+              const next = !autoSpeak;
+              setAutoSpeak(next);
+              if (!next) {
+                soundFx.cancelSpeech();
+              }
+            }}
+            title="Tự động phát âm 3 lần khi chuyển sang thẻ mới"
+          >
+            {autoSpeak ? '🔊 Tự đọc (x3)' : '🔈 Tắt tự đọc'}
+          </button>
+          <button
+            type="button"
             className={`toggle-pill ${isShuffled ? 'active' : ''}`}
             onClick={handleToggleShuffle}
             title="Đảo ngẫu nhiên danh sách thẻ"
@@ -196,144 +222,132 @@ export const VocabFlashcard: React.FC<VocabFlashcardProps> = ({
         </div>
       </div>
 
-      {/* 3D Flip Flashcard */}
-      <div
-        className={`vocab-card-scene ${isFlipped ? 'flipped' : ''}`}
-        onClick={handleFlip}
-        role="button"
-        tabIndex={0}
-        aria-label="Nhấn để lật thẻ"
-      >
-        <div className="vocab-card-inner">
-          {/* Front Side: Japanese (Kanji / Kana / Romaji) */}
-          <div className="vocab-card-face card-front">
-            <div className="card-badge-row">
-              <span className="card-category-badge">{catName}</span>
-              <button
-                type="button"
-                className="card-audio-btn"
-                onClick={handleSpeak}
-                title="Nghe phát âm tiếng Nhật (phím R)"
-              >
-                🔊 Nghe
-              </button>
-            </div>
+      {/* 3D Flip Flashcard with Flanking Navigation Arrows */}
+      <div className="flashcard-stage">
+        <button
+          type="button"
+          className="stage-nav-btn prev-stage-btn"
+          onClick={handlePrev}
+          title="Thẻ trước (phím ← hoặc K)"
+          aria-label="Thẻ trước"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
 
-            <div className="card-main-content">
-              {/* If word has Kanji, show Kanji as primary and Kana as furigana */}
-              {currentItem.kanji ? (
-                <div className="kanji-display-block">
-                  {showKana && <div className="kanji-furigana">{currentItem.kana}</div>}
-                  <div className="kanji-primary-glyph">{currentItem.kanji}</div>
-                </div>
-              ) : (
-                <div className="kana-primary-glyph">{currentItem.kana}</div>
-              )}
+        <div
+          className={`vocab-card-scene ${isFlipped ? 'flipped' : ''}`}
+          onClick={handleFlip}
+          role="button"
+          tabIndex={0}
+          aria-label="Nhấn để lật thẻ"
+        >
+          <div className="vocab-card-inner">
+            {/* Front Side: Japanese (Kanji / Kana) */}
+            <div className="vocab-card-face card-front">
+              <div className="card-badge-row">
+                <span className="card-category-badge">{catName}</span>
+                <button
+                  type="button"
+                  className="card-audio-btn"
+                  onClick={handleSpeak}
+                  title="Nghe phát âm tiếng Nhật 3 lần (phím R)"
+                >
+                  🔊 Nghe (x3)
+                </button>
+              </div>
 
-              {showHanViet && currentItem.han_viet && (
-                <div className="card-hanviet-badge">
-                  <span className="hanviet-label">Hán-Việt:</span>
-                  <span className="hanviet-val">{currentItem.han_viet}</span>
-                </div>
-              )}
-            </div>
+              <div className="card-main-content">
+                {/* If word has Kanji, show Kanji as primary and Kana as furigana */}
+                {currentItem.kanji ? (
+                  <div className="kanji-display-block">
+                    {showKana && <div className="kanji-furigana">{currentItem.kana}</div>}
+                    <div className="kanji-primary-glyph">{currentItem.kanji}</div>
+                  </div>
+                ) : (
+                  <div className="kana-primary-glyph">{currentItem.kana}</div>
+                )}
 
-            <div className="card-footer-hint">
-              <span>Chạm hoặc phím <kbd>Space</kbd> để xem nghĩa</span>
-            </div>
-          </div>
-
-          {/* Back Side: Vietnamese, Han-Viet, Notes, Politeness */}
-          <div className="vocab-card-face card-back">
-            <div className="card-badge-row">
-              <span className="card-category-badge">{catName}</span>
-              <button
-                type="button"
-                className="card-audio-btn"
-                onClick={handleSpeak}
-                title="Nghe lại phát âm (phím R)"
-              >
-                🔊 Nghe
-              </button>
-            </div>
-
-            <div className="card-main-content back-content">
-              <div className="back-japanese-summary">
-                <span className="back-jp-kana">{currentItem.kana}</span>
-                {currentItem.kanji && (
-                  <span className="back-jp-kanji">({currentItem.kanji})</span>
+                {showHanViet && currentItem.han_viet && (
+                  <div className="card-hanviet-badge">
+                    <span className="hanviet-label">Hán-Việt:</span>
+                    <span className="hanviet-val">{currentItem.han_viet}</span>
+                  </div>
                 )}
               </div>
 
-              <div className="back-vietnamese-meaning">
-                {currentItem.vietnamese}
-              </div>
-
-              {currentItem.han_viet && (
-                <div className="back-hanviet-highlight">
-                  <span className="badge-title">Âm Hán-Việt:</span>
-                  <span className="badge-body">{currentItem.han_viet}</span>
-                </div>
-              )}
-
-              {currentItem.notes && (
-                <div className="card-notes-box">
-                  <span className="notes-icon">💡</span>
-                  <span className="notes-text">{currentItem.notes}</span>
-                </div>
-              )}
-
-              <div className="card-meta-chips">
-                {currentItem.part_of_speech && (
-                  <span className="meta-chip chip-pos">{currentItem.part_of_speech}</span>
-                )}
-                {currentItem.politeness && (
-                  <span className="meta-chip chip-polite">{currentItem.politeness}</span>
-                )}
+              <div className="card-footer-hint">
+                <span>Chạm thẻ hoặc phím <kbd>Space</kbd> để xem nghĩa</span>
               </div>
             </div>
 
-            <div className="card-footer-hint">
-              <span>Chạm hoặc phím <kbd>Space</kbd> để lật lại</span>
+            {/* Back Side: Vietnamese, Han-Viet, Notes, Politeness */}
+            <div className="vocab-card-face card-back">
+              <div className="card-badge-row">
+                <span className="card-category-badge">{catName}</span>
+                <button
+                  type="button"
+                  className="card-audio-btn"
+                  onClick={handleSpeak}
+                  title="Nghe lại phát âm 3 lần (phím R)"
+                >
+                  🔊 Nghe (x3)
+                </button>
+              </div>
+
+              <div className="card-main-content back-content">
+                <div className="back-japanese-summary">
+                  <span className="back-jp-kana">{currentItem.kana}</span>
+                  {currentItem.kanji && (
+                    <span className="back-jp-kanji">({currentItem.kanji})</span>
+                  )}
+                </div>
+
+                <div className="back-vietnamese-meaning">
+                  {currentItem.vietnamese}
+                </div>
+
+                {currentItem.han_viet && (
+                  <div className="back-hanviet-highlight">
+                    <span className="badge-title">Âm Hán-Việt:</span>
+                    <span className="badge-body">{currentItem.han_viet}</span>
+                  </div>
+                )}
+
+                {currentItem.notes && (
+                  <div className="card-notes-box">
+                    <span className="notes-icon">💡</span>
+                    <span className="notes-text">{currentItem.notes}</span>
+                  </div>
+                )}
+
+                <div className="card-meta-chips">
+                  {currentItem.part_of_speech && (
+                    <span className="meta-chip chip-pos">{currentItem.part_of_speech}</span>
+                  )}
+                  {currentItem.politeness && (
+                    <span className="meta-chip chip-polite">{currentItem.politeness}</span>
+                  )}
+                </div>
+              </div>
+
+              <div className="card-footer-hint">
+                <span>Chạm thẻ hoặc phím <kbd>Space</kbd> để lật lại</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Navigation Controls */}
-      <div className="flashcard-nav-controls">
-        <button
-          type="button"
-          className="nav-control-btn prev-btn"
-          onClick={handlePrev}
-          title="Thẻ trước (phím Mũi tên trái hoặc K)"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="19" y1="12" x2="5" y2="12" />
-            <polyline points="12 19 5 12 12 5" />
-          </svg>
-          <span>Trước</span>
-        </button>
 
         <button
           type="button"
-          className="flip-action-btn"
-          onClick={handleFlip}
-          title="Lật thẻ (phím Space)"
-        >
-          🔄 Lật thẻ
-        </button>
-
-        <button
-          type="button"
-          className="nav-control-btn next-btn"
+          className="stage-nav-btn next-stage-btn"
           onClick={handleNext}
-          title="Thẻ tiếp theo (phím Mũi tên phải hoặc J)"
+          title="Thẻ tiếp theo (phím → hoặc J)"
+          aria-label="Thẻ tiếp theo"
         >
-          <span>Sau</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12" />
-            <polyline points="12 5 19 12 12 19" />
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="9 18 15 12 9 6" />
           </svg>
         </button>
       </div>
@@ -341,7 +355,7 @@ export const VocabFlashcard: React.FC<VocabFlashcardProps> = ({
       {/* Keyboard shortcuts reminder */}
       <div className="flashcard-shortcuts-legend">
         <span>Phím tắt:</span>
-        <code>Space</code> lật thẻ &bull; <code>&larr;</code> hoặc <code>K</code> lùi &bull; <code>&rarr;</code> hoặc <code>J</code> tiến &bull; <code>R</code> phát âm
+        <code>Space</code> lật thẻ &bull; <code>&larr;</code> hoặc <code>K</code> lùi &bull; <code>&rarr;</code> hoặc <code>J</code> tiến &bull; <code>R</code> phát âm (x3)
       </div>
     </div>
   );

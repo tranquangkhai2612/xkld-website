@@ -4,6 +4,7 @@ class SoundEffects {
   private ctx: AudioContext | null = null;
   private soundEnabled: boolean = true;
   private speechEnabled: boolean = true;
+  private speechTimeoutId: number | null = null;
 
   constructor() {
     // AudioContext will be initialized on first user interaction
@@ -149,31 +150,80 @@ class SoundEffects {
   }
 
   /**
-   * Pronounce Japanese character or phrase using native SpeechSynthesis
+   * Cancel any active Japanese speech synthesis and pending repeat timers
+   */
+  public cancelSpeech() {
+    if (this.speechTimeoutId !== null) {
+      window.clearTimeout(this.speechTimeoutId);
+      this.speechTimeoutId = null;
+    }
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      try {
+        window.speechSynthesis.cancel();
+      } catch {
+        // ignore
+      }
+    }
+  }
+
+  /**
+   * Pronounce Japanese character or phrase using native SpeechSynthesis once
    */
   public speakJapanese(text: string) {
+    this.speakJapaneseRepeated(text, 1);
+  }
+
+  /**
+   * Pronounce Japanese character or phrase repeating N times with a natural pause between repetitions
+   */
+  public speakJapaneseRepeated(text: string, count: number = 3, delayBetweenMs: number = 500) {
     if (!this.speechEnabled || typeof window === 'undefined' || !('speechSynthesis' in window)) {
       return;
     }
 
-    try {
-      window.speechSynthesis.cancel(); // Stop prior speech
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'ja-JP';
-      utterance.rate = 0.85; // Slightly slower for clear pronunciation learning
-      utterance.pitch = 1.0;
+    this.cancelSpeech();
 
-      // Try finding a Japanese voice
-      const voices = window.speechSynthesis.getVoices();
-      const jaVoice = voices.find((v) => v.lang.startsWith('ja') || v.lang.includes('JP'));
-      if (jaVoice) {
-        utterance.voice = jaVoice;
-      }
-
-      window.speechSynthesis.speak(utterance);
-    } catch {
-      // Fallback
+    // Clean text: strip leading tildes, take first alternative if slashes exist
+    let clean = text.trim();
+    if (clean.includes('/')) {
+      clean = clean.split('/')[0].trim();
     }
+    clean = clean.replace(/^[～~]/, '').trim();
+    if (!clean) return;
+
+    let remaining = count;
+
+    const speakIteration = () => {
+      if (remaining <= 0) return;
+
+      try {
+        const utterance = new SpeechSynthesisUtterance(clean);
+        utterance.lang = 'ja-JP';
+        utterance.rate = 0.86; // Measured, natural pace for clear pronunciation
+        utterance.pitch = 1.0;
+
+        const voices = window.speechSynthesis.getVoices();
+        const jaVoice = voices.find((v) => v.lang.startsWith('ja') || v.lang.includes('JP'));
+        if (jaVoice) {
+          utterance.voice = jaVoice;
+        }
+
+        utterance.onend = () => {
+          remaining--;
+          if (remaining > 0) {
+            this.speechTimeoutId = window.setTimeout(() => {
+              speakIteration();
+            }, delayBetweenMs);
+          }
+        };
+
+        window.speechSynthesis.speak(utterance);
+      } catch {
+        // Fallback
+      }
+    };
+
+    speakIteration();
   }
 }
 
