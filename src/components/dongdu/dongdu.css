@@ -5,11 +5,7 @@
 
 .dongdu-vocab-view {
   width: 100%;
-  max-width: 1100px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.75rem;
   padding-bottom: 3rem;
   animation: fadeIn 0.3s ease-out;
 }
@@ -20,125 +16,254 @@
 }
 
 /* ==========================================================================
-   1. HERO BANNER & LESSON SELECTOR
+   1. TWO-COLUMN LAYOUT: LEFT SIDEBAR + RIGHT MAIN PANEL
    ========================================================================== */
-.dongdu-hero-banner {
+.dongdu-vocab-layout {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 1.75rem;
+  align-items: start;
+  width: 100%;
+}
+
+/* ==========================================================================
+   LEFT SIDEBAR: LESSON SWITCHER CARD LIST
+   ========================================================================== */
+.dongdu-lessons-sidebar {
+  position: sticky;
+  top: 86px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 10;
+}
+
+.sidebar-header {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 1.5rem 1.75rem;
+  padding: 1.1rem 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sidebar-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sidebar-icon {
+  font-size: 1.2rem;
+}
+
+.sidebar-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.sidebar-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Vertical List of Lesson Cards */
+.lesson-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.lesson-nav-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.15rem 1.25rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-modern);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.lesson-nav-card:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.lesson-nav-card.active {
+  background: var(--bg-card);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 1.5px var(--accent-primary), 0 8px 24px var(--accent-primary-glow);
+}
+
+.lesson-nav-card.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 16px;
+  bottom: 16px;
+  width: 4px;
+  background: var(--accent-primary);
+  border-radius: 0 4px 4px 0;
+}
+
+.lesson-card-top-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1.5rem;
-  box-shadow: var(--shadow-sm);
-  position: relative;
-  overflow: hidden;
+  width: 100%;
 }
 
-.dongdu-hero-banner::before {
-  content: '東遊';
-  position: absolute;
-  right: 1.5rem;
-  bottom: -0.5rem;
-  font-family: var(--font-kana);
-  font-size: 6rem;
-  font-weight: 800;
-  color: var(--accent-primary);
-  opacity: 0.05;
-  pointer-events: none;
-  line-height: 1;
-}
-
-.hero-content-left {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  flex: 1;
-}
-
-.hero-badges-row {
+.lesson-badge-cluster {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  flex-wrap: wrap;
+  gap: 0.4rem;
 }
 
-.source-badge {
+.lesson-tag-pill {
   background: var(--accent-primary-soft);
   color: var(--accent-primary);
-  font-size: 0.8rem;
-  font-weight: 700;
-  padding: 0.25rem 0.65rem;
-  border-radius: var(--radius-full);
-  letter-spacing: 0.02em;
-}
-
-.level-badge {
-  background: var(--bg-surface);
-  color: var(--text-secondary);
   font-size: 0.78rem;
-  font-weight: 600;
-  padding: 0.25rem 0.6rem;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--border-subtle);
-}
-
-.lesson-badge {
-  background: var(--accent-gold-soft);
-  color: var(--accent-gold);
-  font-size: 0.78rem;
-  font-weight: 700;
-  padding: 0.25rem 0.6rem;
-  border-radius: var(--radius-full);
-}
-
-.dongdu-lesson-title {
-  font-size: 1.35rem;
   font-weight: 800;
-  color: var(--text-primary);
-  margin: 0;
-  line-height: 1.3;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
 }
 
-.dongdu-lesson-desc {
-  font-size: 0.88rem;
-  color: var(--text-secondary);
-  margin: 0;
-  line-height: 1.45;
-  max-width: 650px;
+.lesson-nav-card.active .lesson-tag-pill {
+  background: var(--accent-primary);
+  color: #FFFFFF;
 }
 
-.lesson-picker-box {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  min-width: 200px;
-}
-
-.picker-label {
+.lesson-jp-badge {
+  font-family: var(--font-kana);
   font-size: 0.78rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   color: var(--text-muted);
 }
 
-.lesson-dropdown {
-  background: var(--bg-surface);
-  color: var(--text-primary);
-  border: 1px solid var(--border-strong);
-  padding: 0.55rem 0.85rem;
-  border-radius: var(--radius-sm);
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  outline: none;
-  transition: border-color 0.2s ease;
+.lesson-active-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--accent-matcha-soft);
+  color: var(--accent-matcha);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
 }
 
-.lesson-dropdown:focus {
-  border-color: var(--accent-primary);
+.indicator-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-matcha);
+  border-radius: 50%;
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 5px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.lesson-word-counter {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  background: var(--bg-surface);
+  padding: 0.18rem 0.5rem;
+  border-radius: var(--radius-full);
+}
+
+.lesson-card-heading {
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.lesson-card-subinfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.lesson-sub-level {
+  font-weight: 600;
+}
+
+.lesson-sub-cats {
+  opacity: 0.8;
+}
+
+.lesson-card-category-chips {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  padding-top: 0.2rem;
+  border-top: 1px dashed var(--border-subtle);
+}
+
+.category-mini-chip {
+  font-size: 0.72rem;
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-xs);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.category-mini-chip.more {
+  color: var(--accent-primary);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   RIGHT MAIN PANEL
+   ========================================================================== */
+.dongdu-main-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+/* Responsive adjustments for layout */
+@media (max-width: 980px) {
+  .dongdu-vocab-layout {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .dongdu-lessons-sidebar {
+    position: static;
+  }
+
+  .lesson-cards-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0.75rem;
+  }
 }
 
 /* ==========================================================================

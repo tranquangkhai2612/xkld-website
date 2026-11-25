@@ -19,7 +19,6 @@ export const VocabFlashcard: React.FC<VocabFlashcardProps> = ({
   const [isFlipped, setIsFlipped] = useState(false);
   const [isShuffled, setIsShuffled] = useState(false);
   const [shuffledOrder, setShuffledOrder] = useState<DongDuVocabItem[]>([]);
-  const [showRomaji, setShowRomaji] = useState(true);
   const [showHanViet, setShowHanViet] = useState(true);
   const [showKana, setShowKana] = useState(true);
 
@@ -164,19 +163,11 @@ export const VocabFlashcard: React.FC<VocabFlashcardProps> = ({
           </button>
           <button
             type="button"
-            className={`toggle-pill ${showRomaji ? 'active' : ''}`}
-            onClick={() => setShowRomaji(!showRomaji)}
-            title="Hiện/Ẩn phiên âm Romaji"
-          >
-            Romaji
-          </button>
-          <button
-            type="button"
             className={`toggle-pill ${showKana ? 'active' : ''}`}
             onClick={() => setShowKana(!showKana)}
             title="Hiện/Ẩn Furigana (Hiragana)"
           >
-            Kana
+            Kana (Furigana)
           </button>
           <button
             type="button"
@@ -237,10 +228,6 @@ export const VocabFlashcard: React.FC<VocabFlashcardProps> = ({
                 </div>
               ) : (
                 <div className="kana-primary-glyph">{currentItem.kana}</div>
-              )}
-
-              {showRomaji && (
-                <div className="card-romaji">{currentItem.romaji}</div>
               )}
 
               {showHanViet && currentItem.han_viet && (
